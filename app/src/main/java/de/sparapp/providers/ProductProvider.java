@@ -35,7 +35,7 @@ public class ProductProvider {
             products.add(new Product(21, "Schoko Riegel", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(22, "Wasser still", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(23, "Wasser Medium", "", CategoryProvider.getCategoryByName("Getraenke")));
-            products.add(new Product(24, "Coca-Cola 500ml", "", CategoryProvider.getCategoryByName("Getraenke")));
+            products.add(new Product(24, "Coca-Cola", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(25, "Coca-Cola 500ml", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(26, "Coca-Cola 500ml", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(27, "Coca-Cola 500ml", "", CategoryProvider.getCategoryByName("Getraenke")));
