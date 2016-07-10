@@ -44,6 +44,7 @@ public class ProductListActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<Product>(this, android.R.layout.simple_list_item_1);
         productList.setAdapter(adapter);
 
+        basketBtn.setText(String.format("Warenkorb (%d)", BasketProvider.getTotal()));
         productList.setClickable(true);
         productList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

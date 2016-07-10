@@ -27,7 +27,7 @@ public class BasketProvider {
     public static int getTotal() {
         int i = 0;
         for(ProductInBasket productInBasket : products) {
-            i =+ productInBasket.getAmount();
+            i += productInBasket.getAmount();
         }
 
         return i;
