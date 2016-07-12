@@ -2,6 +2,7 @@ package de.sparapp.activities;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -48,11 +49,12 @@ public class BasketActivity extends AppCompatActivity {
     }
 
     private Dialog openDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Bitte geben Sie die Distanz ein (km):")
                 .setPositiveButton("Berechne", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
+                        Intent shopIntent = new Intent(BasketActivity.this, ShopActivity.class);
+                        BasketActivity.this.startActivity(shopIntent);
                     }
                 })
                 .setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {

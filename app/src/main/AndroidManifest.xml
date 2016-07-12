@@ -36,5 +36,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.ProductListActivity"/>
         </activity>
+        <activity
+            android:name=".activities.ShopActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".activities.BasketActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BasketActivity"/>
+        </activity>
     </application>
 </manifest>

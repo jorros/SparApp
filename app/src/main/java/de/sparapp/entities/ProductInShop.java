@@ -7,6 +7,13 @@ public class ProductInShop {
 
     private double price;
 
+    public ProductInShop(int id, Product product, Shop shop, double price) {
+        this.id = id;
+        this.product = product;
+        this.shop = shop;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }
