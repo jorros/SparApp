@@ -47,10 +47,12 @@ public class ShopAdapter extends BaseAdapter {
         TextView priceText = (TextView) vi.findViewById(R.id.rowPrice);
         TextView nameText = (TextView) vi.findViewById(R.id.rowName);
         TextView distanceText = (TextView) vi.findViewById(R.id.rowDistance);
+        TextView differenceText = (TextView) vi.findViewById(R.id.rowDifference);
 
         nameText.setText(data[i].getShop().getName());
         priceText.setText(NumberFormat.getCurrencyInstance(new Locale("de", "DE")).format(data[i].getTotalPrice()));
-        distanceText.setText(String.format("%f km", data[i].getShop().getDistance()));
+        distanceText.setText(String.format("%.1f km", data[i].getShop().getDistance()));
+        differenceText.setText("(-" + NumberFormat.getCurrencyInstance(new Locale("de", "DE")).format(data[i].getDifference()) + ")");
         return vi;
     }
 }

@@ -16,8 +16,8 @@ public class ProductInShopProvider {
 
             productsInShops.add(new ProductInShop(1, ProductProvider.getProductById(1), ShopProvider.getShopByName("Aldi"), 5.0));
             productsInShops.add(new ProductInShop(2, ProductProvider.getProductById(2), ShopProvider.getShopByName("Aldi"), 10.0));
-            productsInShops.add(new ProductInShop(3, ProductProvider.getProductById(1), ShopProvider.getShopByName("ASDA"), 2.0));
-            productsInShops.add(new ProductInShop(4, ProductProvider.getProductById(2), ShopProvider.getShopByName("ASDA"), 5.0));
+            productsInShops.add(new ProductInShop(3, ProductProvider.getProductById(1), ShopProvider.getShopByName("Walmart"), 2.0));
+            productsInShops.add(new ProductInShop(4, ProductProvider.getProductById(2), ShopProvider.getShopByName("Walmart"), 5.0));
         }
     }
 

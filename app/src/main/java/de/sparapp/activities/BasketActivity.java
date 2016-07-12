@@ -49,11 +49,13 @@ public class BasketActivity extends AppCompatActivity {
     }
 
     private Dialog openDialog() {
+        final EditText input = new EditText(this);
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Bitte geben Sie die Distanz ein (km):")
                 .setPositiveButton("Berechne", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Intent shopIntent = new Intent(BasketActivity.this, ShopActivity.class);
+                        shopIntent.putExtra("distance", new Double(input.getText().toString()));
                         BasketActivity.this.startActivity(shopIntent);
                     }
                 })
@@ -63,11 +65,11 @@ public class BasketActivity extends AppCompatActivity {
                     }
                 });
 
-        final EditText input = new EditText(this);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
         input.setLayoutParams(lp);
+        input.setText("15");
         builder.setView(input);
 
         return builder.create();

@@ -38,8 +38,6 @@ public class ProductListActivity extends AppCompatActivity {
         final ListView productList = (ListView)findViewById(R.id.listProducts);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter = new ArrayAdapter<Product>(this, android.R.layout.simple_list_item_1);
         productList.setAdapter(adapter);

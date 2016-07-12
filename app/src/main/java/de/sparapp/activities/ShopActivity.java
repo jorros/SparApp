@@ -3,9 +3,12 @@ package de.sparapp.activities;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import de.sparapp.R;
@@ -27,25 +30,30 @@ public class ShopActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shop);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listView = (ListView) findViewById(R.id.shoplist);
 
-        ShopResult result = new ShopResult();
-        result.setDifference(5.5);
-        result.setDistance(2.5);
-        result.setShop(ShopProvider.getShops().get(0));
-        shopAdapter = new ShopAdapter(this, new ShopResult[] { result });
+        shopAdapter = new ShopAdapter(this, calculate(getIntent().getDoubleExtra("distance", 15.0)));
         listView.setAdapter(shopAdapter);
     }
 
-    private ShopResult[] calculate() {
+    private ShopResult[] calculate(double distance) {
         ArrayList<ShopResult> list = new ArrayList<>();
 
+        shopLoop:
         for(Shop shop : ShopProvider.getShops()) {
             ShopResult result = new ShopResult();
             result.setShop(shop);
 
             double totalPrice = 0;
+
+            if(shop.getDistance() > distance) {
+                continue;
+            }
 
             for(ProductInBasket basketProduct : BasketProvider.getProducts()) {
                 for(int i = 0; i < basketProduct.getAmount(); i++) {
@@ -54,17 +62,31 @@ public class ShopActivity extends AppCompatActivity {
                     if(shopProduct != null) {
                         totalPrice += shopProduct.getPrice();
                     } else {
-                        break;
+                        continue shopLoop;
                     }
                 }
             }
+            totalPrice += shop.getDistance() * 0.3;
             result.setTotalPrice(totalPrice);
 
             list.add(result);
         }
 
+        Collections.sort(list, new Comparator<ShopResult>() {
+            @Override
+            public int compare(ShopResult shopResult, ShopResult t1) {
+                if (shopResult.getTotalPrice() < t1.getTotalPrice()) return -1;
+                if (shopResult.getTotalPrice() > t1.getTotalPrice()) return 1;
+                return 0;
+            }
+        });
 
+        double highestPrice = list.get(list.size() - 1).getTotalPrice();
 
-        return (ShopResult[])list.toArray();
+        for(ShopResult result : list) {
+            result.setDifference(highestPrice - result.getTotalPrice());
+        }
+
+        return list.toArray(new ShopResult[list.size()]);
     }
 }
