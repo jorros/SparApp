@@ -12,12 +12,11 @@ public class ShopProvider {
         if(shops == null) {
             shops = new ArrayList<>();
 
-            shops.add(new Shop(1, "Walmart", 0.5));
-            shops.add(new Shop(2, "Coop", 15.5));
-            shops.add(new Shop(3, "Morrisons", 0.9));
-            shops.add(new Shop(4, "Aldi", 1.9));
-            shops.add(new Shop(5, "Lidl", 14.3));
-            shops.add(new Shop(6, "Tesco", 21.4));
+            shops.add(new Shop(1, "Rewe", 2.7));
+            shops.add(new Shop(2, "Edeka", 4.8));
+            shops.add(new Shop(3, "Netto", 7.9));
+            shops.add(new Shop(4, "Aldi", 0.9));
+            shops.add(new Shop(5, "Lidl", 3.9));
         }
     }
 

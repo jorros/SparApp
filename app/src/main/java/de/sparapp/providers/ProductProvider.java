@@ -55,12 +55,12 @@ public class ProductProvider {
             products.add(new Product(40, "Hühnerfrikassee 500g", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(41, "Lasagne 500g", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(42, "Nudelauflauf 500g", "", CategoryProvider.getCategoryByName("Getraenke")));
-            products.add(new Product(43, "Erdnussbutter", "", CategoryProvider.getCategoryByName("Getraenke")));
-            products.add(new Product(44, "Erdbeermarmelade", "", CategoryProvider.getCategoryByName("Getraenke")));
+            products.add(new Product(43, "Erdnussbutter 500g", "", CategoryProvider.getCategoryByName("Getraenke")));
+            products.add(new Product(44, "Erdbeermarmelade 500g", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(45, "Honig 500g", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(46, "Zucker 500g", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(47, "Salz 500g", "", CategoryProvider.getCategoryByName("Getraenke")));
-            products.add(new Product(48, "Orangensaft", "", CategoryProvider.getCategoryByName("Getraenke")));
+            products.add(new Product(48, "Orangensaft 50% 1L", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(49, "Müllbeutel", "", CategoryProvider.getCategoryByName("Getraenke")));
             products.add(new Product(50, "Küchenrolle", "", CategoryProvider.getCategoryByName("Getraenke")));
 
