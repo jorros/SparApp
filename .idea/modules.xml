@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/SparApp.iml" filepath="$PROJECT_DIR$/SparApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sparapp.iml" filepath="$PROJECT_DIR$/sparapp.iml" />
     </modules>
   </component>
 </project>
